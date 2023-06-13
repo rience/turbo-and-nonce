@@ -5,7 +5,7 @@ This simple application shows problem in Firefox and Safari browsers when naviga
 * `/first/show`
 * `/second/show`
 
-Second page is using differet layout (with different `<head />`) that has inline stylesheet, written like this
+Second page is using different layout (with different `<head />`) that has inline stylesheet, written like this
 
 ```
 <style type='text/css' nonce="<%= content_security_policy_nonce %>">
@@ -23,3 +23,7 @@ Second page is using differet layout (with different `<head />`) that has inline
 4. Click link "Go to Second"
 
 Result: Background colour will not change. However, when you reload page it will.
+
+**Workaround**
+
+If you add `data-turbo-track=reload` to custom stylesheet it will work.
